@@ -23,6 +23,7 @@
       <div class="col-1">
 
         <br>
+        <input type="hidden" value="{{oRegion}}" id="id_oregion">
         <label for="">Region:</label>
                 <select name="region" id="id_region" class="form-control" >
                     <option value="">Seleccione la region...</option>
@@ -30,7 +31,7 @@
                         <option value="{{region.id}}">{{region.nombre}}</option>
                     {% endfor %}
                 </select>
-                <button type="button" id="id_region" onclick="buscarAsesores();">Buscar</button>
+                <button type="button" onclick="buscarAsesores();">Buscar</button>
         <br>
 
         <h3><b>Asesores</b></h3>
@@ -94,9 +95,19 @@
     </div>
   </div>
 
-  <script>
+<script>
+window.onload = function() {
+  var id = document.getElementById("id_oregion").value;
+  console.log("estooo ")
+  console.log(id);
+  var region = document.getElementById("id_region")
+  region.selectedIndex=id;
+};
+
 function buscarAsesores(){
-  alert("hola")
+  var region = document.getElementById("id_region")
+  var id_region = region.options[region.selectedIndex].value
+  location.href = "/asesores/"+ id_region +"/";
 }
-  </script>
-  {% endblock %}
+</script>
+{% endblock %}

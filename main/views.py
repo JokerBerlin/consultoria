@@ -14,10 +14,9 @@ def mostrarContacto(request):
     return render(request,'main/contacto/contacto.html',context)
 
 def mostrarAsesores(request, id_region):
-    print(id_region)
     asesores = Asesor.objects.filter(region = id_region)
     regiones = Region.objects.filter(activo=True)
-    context = {'asesores':asesores,'regiones':regiones,}
+    context = {'asesores':asesores,'regiones':regiones,"oRegion":id_region,}
     return render(request,'main/asesores/asesores.html',context)
 
 def mostrarAsesor(request):
