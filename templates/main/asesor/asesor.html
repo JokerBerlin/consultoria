@@ -21,63 +21,16 @@
   <div class="indent">
     <div class="wrapper">
       <div class="col-1">
-        <h3><b>Juan Lopez Gomez</b> </h3>
-        <div class="img-box1"><img src="/static/images/asesores/1.jpg" alt="" />
-          <p class="p0">Cotizar, atender, realizar seguimiento y cerrar la venta para contribuir al cumplimiento de la metas de ventas y a la satisfacción del cliente. </p>
+        <h3><b>{{asesor.nombre}}</b> </h3>
+        <div class="img-box1"><img src="/media/{{asesor.foto}}" width="120" height="100" alt="" />
+          <p class="p0">{{asesor.funcion}}</p>
         </div>
-        <p>Ejecutar los procesos de ventas en coordinación con el área de soporte administrativo a fin de contribuir al cumplimiento de los procedimientos</p>
-        <p class="p0">Otras actividades solicitadas por el jefe directo y que son parte de la naturaleza de su cargo..</p>
+        <p>Teléfono: {{asesor.telefono}}</p>
+        <p>Correo: {{asesor.correo}}</p>
+        <p>Precio: {{asesor.precio}}</p>
+        <p>Región: {{asesor.region.nombre}}</p>
       </div>
-      <div class="col-2">
-        <div class="box2">
-          <div class="border-top">
-            <div class="left-top-corner">
-              <div class="right-top-corner">
-                <div class="inner">
-                  <h4><b>Latest</b> News</h4>
-                  <ul class="news">
-                    <li><a href="#">May 21, 2010</a>
-                      <p>Lorem ipsum dolor sit amet, coisectur adipisicing elit, sed doeiusmo.</p>
-                    </li>
-                    <li><a href="#">May 12, 2010</a>
-                      <p>Ut enim ad minim veniam, qnostrud exercitation ullamco.</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box3">
-          <div class="right-bot-corner">
-            <div class="left-bot-corner">
-              <div class="inner">
-                <h4><b>Login</b> Form</h4>
-                <form action="#" id="login-form">
-                  <fieldset>
-                    <div class="field">
-                      <label>Username:</label>
-                      <input type="text" />
-                    </div>
-                    <div class="field">
-                      <label>Password:</label>
-                      <input type="password" />
-                    </div>
-                    <div class="field1">
-                      <label class="extra">Remember Me:</label>
-                      <input type="checkbox" class="extra" />
-                      <a href="#"><em><b>Log In<span>Log In</span></b></em></a></div>
-                    <ul>
-                      <li><a href="#">Forgot your password?</a></li>
-                      <li class="last"><a href="#">Register</a></li>
-                    </ul>
-                  </fieldset>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 

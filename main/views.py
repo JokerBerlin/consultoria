@@ -19,8 +19,9 @@ def mostrarAsesores(request, id_region):
     context = {'asesores':asesores,'regiones':regiones,"oRegion":id_region,}
     return render(request,'main/asesores/asesores.html',context)
 
-def mostrarAsesor(request):
-    context = {}
+def mostrarAsesor(request, id):
+    asesor = Asesor.objects.get(id= id )
+    context = {'asesor':asesor,}
     return render(request,'main/asesor/asesor.html',context)
 
 def mostrarIndex(request):

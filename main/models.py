@@ -12,6 +12,6 @@ class Asesor(models.Model):
     telefono = models.CharField(max_length=9)
     correo = models.CharField(max_length=50, null=True)
     funcion = models.CharField(max_length=200)
-    precio = models.DecimalField(max_digits=19, decimal_places=10)
+    precio = models.DecimalField(max_digits=19, decimal_places=2)
     foto = models.ImageField(blank=True, upload_to='asesor/')
     region = models.ForeignKey(Region, on_delete=models.PROTECT)
