@@ -1,0 +1,104 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="box">
+    <div class="border-bot">
+      <div class="right-bot-corner">
+        <div class="left-bot-corner">
+          <div class="inner">
+            <div class="box1 alt">
+              <div class="inner">
+                <h4><b>Contactos</b> </h4>
+                <div class="address"><b>Ciudad:</b>50122<br />
+                  <b>Dirección:</b>USA<br />
+                  <b>Teléfono:</b>+354 5635600<br />
+                  <b>Celular:</b>+354 5635610</div>
+                <p class="p0 extra-wrap"><b>El equipo de Autoasesor agradece tu interés.</b><br />
+                  Esta área es para que puedas solicitar información adicional y/o específica sobre tu vehículo y/o el plan financiero que quieres para comprarlo. También puedes hacer una cita para visitar nuestras oficinas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="indent">
+    <div class="wrapper">
+      <div class="col-1">
+        <h3><b>Formulario</b> de Contacto</h3>
+        <form id="contacts-form" action="#">
+          <fieldset>
+            <div class="field">
+              <label>Nombre:</label>
+              <input type="text" value=""/>
+            </div>
+            <div class="field">
+              <label>Apellido:</label>
+              <input type="text" value=""/>
+            </div>
+            <div class="field">
+              <label>E-mail:</label>
+              <input type="text" value=""/>
+            </div>
+            <div class="field">
+              <label>Mensaje:</label>
+              <textarea cols="1" rows="1"></textarea>
+            </div>
+            <div class="wrapper"><a href="#" class="link1"><em><b>ENVIAR</b></em></a></div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-2">
+        <div class="box2">
+          <div class="border-top">
+            <div class="left-top-corner">
+              <div class="right-top-corner">
+                <div class="inner">
+                  <h4><b>Latest</b> News</h4>
+                  <ul class="news">
+                    <li><a href="#">May 21, 2010</a>
+                      <p>Lorem ipsum dolor sit amet, coisectur adipisicing elit, sed doeiusmo.</p>
+                    </li>
+                    <li><a href="#">May 12, 2010</a>
+                      <p>Ut enim ad minim veniam, qnostrud exercitation ullamco.</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box3">
+          <div class="right-bot-corner">
+            <div class="left-bot-corner">
+              <div class="inner">
+                <h4><b>Login</b> Form</h4>
+                <form action="#" id="login-form">
+                  <fieldset>
+                    <div class="field">
+                      <label>Username:</label>
+                      <input type="text" />
+                    </div>
+                    <div class="field">
+                      <label>Password:</label>
+                      <input type="password" />
+                    </div>
+                    <div class="field1">
+                      <label class="extra">Remember Me:</label>
+                      <input type="checkbox" class="extra" />
+                      <a href="#"><em><b>Log In<span>Log In</span></b></em></a></div>
+                    <ul>
+                      <li><a href="#">Forgot your password?</a></li>
+                      <li class="last"><a href="#">Register</a></li>
+                    </ul>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
