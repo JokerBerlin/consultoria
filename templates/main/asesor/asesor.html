@@ -25,13 +25,20 @@
         <div class="img-box1"><img src="/media/{{asesor.foto}}" width="120" height="100" alt="" />
           <p class="p0">{{asesor.funcion}}</p>
         </div>
-        <p>Teléfono: {{asesor.telefono}}</p>
+        <p>label  Teléfono: {{asesor.telefono}}</p>
         <p>Correo: {{asesor.correo}}</p>
         <p>Precio: {{asesor.precio}}</p>
         <p>Región: {{asesor.region.nombre}}</p>
+        <p> <button onclick="contratarAsesor();" >Contratar Asesor</button> </p>
       </div>
 
     </div>
   </div>
+
+<script>
+function contratarAsesor(){
+  document.location = "/"
+}
+</script>
 
   {% endblock %}

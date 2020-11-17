@@ -36,6 +36,11 @@ def mostrarServicios(request):
     context = {}
     return render(request,'main/servicios/servicios.html',context)
 
+def mostrarPago(request):
+    context = {}
+    return render(request,'main/pago/pago.html',context)
+
+
 def registrarAsesor(request):
     regiones = Region.objects.filter(activo=True)
     context = {'regiones':regiones,}

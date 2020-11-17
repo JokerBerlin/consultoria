@@ -10,6 +10,7 @@ urlpatterns = [
     path('index/',views.mostrarIndex ,name="mostrarIndex"),
     path('nosotros/',views.mostrarNosotros ,name="mostrarNosotros"),
     path('servicios/',views.mostrarServicios ,name="mostrarServicios"),
+    path('pago/',views.mostrarPago ,name="mostrarPago"),
     path('asesor/registrar/',views.registrarAsesor ,name="registrarAsesor"),
 
     #API
