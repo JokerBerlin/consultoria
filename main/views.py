@@ -48,7 +48,8 @@ def registrarAsesor(request):
     return render(request,'asesor/registrar.html',context)
 
 def listarContrata(request):
-    context = {}
+    contratas = Contrata.objects.all()
+    context = {'contratas': contratas,}
     return render(request,'contrata/listar.html',context)
     
 def registarAsesorAPI(request):
