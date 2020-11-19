@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import json
 from django.shortcuts import redirect
 
-from .models import Region, Asesor
+from .models import Region, Asesor, Cliente, Contrata
 
 
 
@@ -36,9 +36,10 @@ def mostrarServicios(request):
     context = {}
     return render(request,'main/servicios/servicios.html',context)
 
-def mostrarPago(request):
-    context = {}
-    return render(request,'main/pago/pago.html',context)
+def mostrarPago(request, id):
+    asesor = Asesor.objects.get(id= id )
+    context = {'asesor':asesor,}
+    return render(request,'pago/pago.html',context)
 
 
 def registrarAsesor(request):
@@ -46,6 +47,10 @@ def registrarAsesor(request):
     context = {'regiones':regiones,}
     return render(request,'asesor/registrar.html',context)
 
+def listarContrata(request):
+    context = {}
+    return render(request,'contrata/listar.html',context)
+    
 def registarAsesorAPI(request):
     if request.method == 'POST':
         data = request.POST, request.FILES
@@ -66,3 +71,25 @@ def registarAsesorAPI(request):
         asesor.save()
         
         return redirect('/asesor/registrar/')
+
+def registrarContrataAPI(request,id):
+    if request.method=='POST':
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        cliente = Cliente()
+        cliente.nombre = body['nombre']
+        cliente.apellido = body['apellido']
+        cliente.telefono = body['telefono']
+        cliente.direccion = body['direccion']
+        cliente.save()
+
+        asesor = Asesor.objects.get(id=id)
+
+        contrata = Contrata()
+        contrata.asunto = body['asunto']
+        contrata.asesor = asesor
+        contrata.cliente = cliente
+        
+        contrata.save()
+        
+    return HttpResponse(json.dumps("respuesta"), content_type='application/json')

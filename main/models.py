@@ -15,3 +15,15 @@ class Asesor(models.Model):
     precio = models.DecimalField(max_digits=19, decimal_places=2)
     foto = models.ImageField(blank=True, upload_to='asesor/')
     region = models.ForeignKey(Region, on_delete=models.PROTECT)
+
+class Cliente(models.Model):
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    telefono = models.CharField(max_length=9)
+    direccion = models.CharField(max_length=100) 
+
+class Contrata(models.Model):
+    asunto = models.CharField(max_length=200)
+    fecha = models.DateTimeField(auto_now_add=True)
+    asesor = models.ForeignKey(Asesor, on_delete=models.PROTECT)
+    cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)

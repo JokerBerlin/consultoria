@@ -25,7 +25,7 @@
         <div class="img-box1"><img src="/media/{{asesor.foto}}" width="120" height="100" alt="" />
           <p class="p0">{{asesor.funcion}}</p>
         </div>
-        <p>label  Teléfono: {{asesor.telefono}}</p>
+        <p>Teléfono: {{asesor.telefono}}</p>
         <p>Correo: {{asesor.correo}}</p>
         <p>Precio: {{asesor.precio}}</p>
         <p>Región: {{asesor.region.nombre}}</p>
@@ -36,8 +36,9 @@
   </div>
 
 <script>
+var id = '{{asesor.id}}'
 function contratarAsesor(){
-  document.location = "/"
+  document.location = "/pago/"+id+"/"
 }
 </script>
 

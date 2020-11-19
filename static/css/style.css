@@ -600,3 +600,7 @@ h3 b, h4 b {
 a {
 	outline:none;
 }
+
+p {
+	font: oblique bold 120% cursive;
+}

@@ -10,9 +10,12 @@ urlpatterns = [
     path('index/',views.mostrarIndex ,name="mostrarIndex"),
     path('nosotros/',views.mostrarNosotros ,name="mostrarNosotros"),
     path('servicios/',views.mostrarServicios ,name="mostrarServicios"),
-    path('pago/',views.mostrarPago ,name="mostrarPago"),
+    path('pago/<int:id>/',views.mostrarPago ,name="mostrarPago"),
     path('asesor/registrar/',views.registrarAsesor ,name="registrarAsesor"),
+    path('contrata/listar/',views.listarContrata ,name="listarContrata"),
 
     #API
     path('api/asesor/registrar/',views.registarAsesorAPI ,name="registrarAsesorAPI"),
+    path('api/contrata/registrar/<int:id>/',views.registrarContrataAPI ,name="registrarContrataAPI"),
+
 ]
