@@ -47,6 +47,10 @@ def registrarAsesor(request):
     context = {'regiones':regiones,}
     return render(request,'asesor/registrar.html',context)
 
+def registrarRegion(request):
+    context = {}
+    return render(request,'region/registrar.html',context)
+
 def listarContrata(request):
     contratas = Contrata.objects.all()
     context = {'contratas': contratas,}
@@ -72,6 +76,18 @@ def registarAsesorAPI(request):
         asesor.save()
         
         return redirect('/asesor/registrar/')
+
+def registarRegionAPI(request):
+    if request.method == 'POST':
+        data = request.POST, request.FILES
+        # print(data[0]['nombre'])
+        region = Region(
+            nombre = data[0]['nombre'],
+            
+            )
+        region.save()
+        
+        return redirect('/region/registrar/')
 
 def registrarContrataAPI(request,id):
     if request.method=='POST':

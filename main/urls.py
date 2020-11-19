@@ -12,10 +12,12 @@ urlpatterns = [
     path('servicios/',views.mostrarServicios ,name="mostrarServicios"),
     path('pago/<int:id>/',views.mostrarPago ,name="mostrarPago"),
     path('asesor/registrar/',views.registrarAsesor ,name="registrarAsesor"),
+    path('region/registrar/',views.registrarRegion ,name="registrarRegion"),
     path('contrata/listar/',views.listarContrata ,name="listarContrata"),
 
     #API
     path('api/asesor/registrar/',views.registarAsesorAPI ,name="registrarAsesorAPI"),
+    path('api/region/registrar/',views.registarRegionAPI ,name="registrarRegionAPI"),
     path('api/contrata/registrar/<int:id>/',views.registrarContrataAPI ,name="registrarContrataAPI"),
 
 ]
