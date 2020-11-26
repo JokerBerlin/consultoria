@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import json
 from django.shortcuts import redirect
 
-from .models import Region, Asesor, Cliente, Contrata
+from .models import Region, Asesor, Cliente, Contrata, Categoria, Producto
 
 
 
@@ -55,11 +55,22 @@ def listarContrata(request):
     contratas = Contrata.objects.all()
     context = {'contratas': contratas,}
     return render(request,'contrata/listar.html',context)
+
+def registrarProducto(request):
+    categorias = Categoria.objects.filter(estado=True)
+    context = {'categorias':categorias,}
+    return render(request,'producto/registrar.html',context)
     
+def listarProductos(request, id_categoria):
+    productos = Producto.objects.filter(categoria = id_categoria)
+    categorias = Categoria.objects.filter(estado=True)
+    context = {'productos':productos,'categorias':categorias,"oCategoria":id_categoria,}
+    return render(request,'producto/listar.html',context)
+
+
 def registarAsesorAPI(request):
     if request.method == 'POST':
         data = request.POST, request.FILES
-        # print(data[0]['nombre'])
         region = Region.objects.get(id=data[0]['region'])
         asesor = Asesor(
             nombre = data[0]['nombre'],
@@ -76,6 +87,22 @@ def registarAsesorAPI(request):
         asesor.save()
         
         return redirect('/asesor/registrar/')
+
+def registrarProductoAPI(request):
+    if request.method == 'POST':
+        data = request.POST, request.FILES
+        categoria = Categoria.objects.get(id=data[0]['categoria'])
+        producto = Producto(
+            nombreProducto = data[0]['nombreProducto'],
+            codigoProducto =data[0]['codigoProducto'],
+            cantidadProducto = data[0]['cantidadProducto'],
+            precioProducto = data[0]['precioProducto'],
+            imagenProducto = data[1]['imagenProducto'],
+            categoria = categoria, 
+        )
+        producto.save()
+        
+        return redirect('/producto/registrar/')
 
 def registarRegionAPI(request):
     if request.method == 'POST':

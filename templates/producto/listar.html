@@ -1,0 +1,56 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="box">
+    <div class="border-bot">
+      <div class="right-bot-corner">
+        <div class="left-bot-corner">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="indent">
+    <div class="wrapper">
+      <div class="col-1">
+
+        <br>
+        <input type="hidden" value="{{oCategoria}}" id="id_ocategoria">
+        <label for="">Categorias:</label>
+                <select name="region" id="id_categoria" class="form-control" >
+                    <option value="">Seleccione la categoría...</option>
+                    {% for categoria in categorias %}
+                        <option value="{{categoria.id}}">{{categoria.nombreCategoria}}</option>
+                    {% endfor %}
+                </select>
+                <button type="button" onclick="buscarCategorias();">Buscar</button>
+        <br>
+
+        <h3><b>Productos</b></h3>
+        <ul class="list">
+          {% for producto in productos %}
+          <li><img src="/media/{{producto.imagenProducto}}" alt="" height="100" width="130" /><a>{{producto.nombreProducto}}</a><br />
+            Codigo Producto: {{producto.codigoProducto}} <br>
+            Cantidad Producto: {{producto.cantidadProducto}} <br>
+            precio Producto: S/.{{producto.precioProducto}} </li>
+            
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<script>
+window.onload = function() {
+  var id = document.getElementById("id_ocategoria").value;
+  var categoria = document.getElementById("id_categoria")
+  categoria.selectedIndex=id;
+};
+
+function buscarCategorias(){
+  var region = document.getElementById("id_categoria")
+  var id_categoria = region.options[region.selectedIndex].value
+  location.href = "/producto/listar/"+ id_categoria;
+}
+</script>
+{% endblock %}

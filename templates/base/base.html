@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>SpeedRacing | Article</title>
+<title>Marketplace</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
 <script src="/static/js/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -27,7 +27,7 @@
 <div id="main">
   <div id="header">
     <div class="row-1">
-      <div class="fleft"><a href="#"><img src="/static/images/logo.gif" alt="" /></a></div>
+      <!-- <div class="fleft"><a href="#"><img src="/static/images/logo.gif" alt="" /></a></div> -->
       <div class="fright">
         <ul>
           <li><a href="{% url 'main:registrarAsesor' %}"><img src="/static/images/icon1.gif" alt="" /></a></li>
@@ -41,7 +41,7 @@
         <ul>
           <li><a href="{% url 'main:mostrarIndex' %}"><span>Inicio</span></a></li>
           <li><a href="{% url 'main:mostrarNosotros' %}"><span>nosotros</span></a></li>
-          <li><a href="{% url 'main:mostrarAsesores' id_region=1 %}"><span>asesores</span></a></li>
+          <li><a href="{% url 'main:listarProductos' id_categoria=1 %}"><span>Productos</span></a></li>
           <li><a href="{% url 'main:mostrarContacto' %}"><span>contacto</span></a></li>
           <li class="last"><a href="{% url 'main:mostrarServicios' %}"><span>servicios</span></a></li>
         </ul>
@@ -49,12 +49,12 @@
     </div>
     <div class="row-3">
       <div class="inside">
-        <h2>Speed is the Source <b>of Emotions</b></h2>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit volutem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+        <h2>Marketplace</h2>
+        <p>Todo lo que buscas en un solo lugar</p>
         
       </div>
     </div>
-    <div class="extra"><img src="/static/images/header-img.png" alt="" /></div>
+    <!-- <div class="extra"><img src="/static/images/header-img.png" alt="" /></div> -->
   </div>
   <div id="content">
     {% block content %}

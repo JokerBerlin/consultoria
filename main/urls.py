@@ -14,10 +14,16 @@ urlpatterns = [
     path('asesor/registrar/',views.registrarAsesor ,name="registrarAsesor"),
     path('region/registrar/',views.registrarRegion ,name="registrarRegion"),
     path('contrata/listar/',views.listarContrata ,name="listarContrata"),
+    path('producto/registrar/',views.registrarProducto ,name="registrarProducto"),
+    path('producto/listar/<int:id_categoria>',views.listarProductos ,name="listarProductos"),
+    
 
     #API
     path('api/asesor/registrar/',views.registarAsesorAPI ,name="registrarAsesorAPI"),
     path('api/region/registrar/',views.registarRegionAPI ,name="registrarRegionAPI"),
     path('api/contrata/registrar/<int:id>/',views.registrarContrataAPI ,name="registrarContrataAPI"),
+
+    path('api/producto/registrar/',views.registrarProductoAPI ,name="registrarProductoAPI"),
+    
 
 ]

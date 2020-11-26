@@ -1,0 +1,59 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<br>
+
+<br>
+
+<div>
+    <div class="wrapper">
+      <div class="col-1">
+        <h3><b>Registrar</b> Asesor</h3>
+        <form id="contacts-form" method="post" action="{% url 'main:registrarProductoAPI' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+          <fieldset>
+            <div class="field">
+              <label>Nombre producto:</label>
+              <input type="text" name="nombreProducto" id="id_nombre">
+            </div>
+            <div class="field">
+              <label>Codigo producto:</label>
+              <input type="text" name="codigoProducto" id="id_tipo_documento">
+            </div>
+            <div class="field">
+              <label>Cantidad producto:</label>
+              <input type="number" name="cantidadProducto" id="id_cantidad">
+            </div>
+            <div class="field">
+                <label>Precio producto:</label>
+                <input type="number" name="precioProducto" id="id_lrecio">
+              </div>
+
+            <div class="field">
+                <label for="">Categoria:</label>
+                        <select name="categoria" id="id_categoria" >
+                            <option value="">Seleccione la categoria...</option>
+                            {% for categoria in categorias %}
+                                <option value="{{categoria.id}}">{{categoria.nombreCategoria}}</option>
+                            {% endfor %}
+                        </select>
+            </div>
+            
+            <div class="field">
+                <label>Imagen producto:</label>
+                <input type="file" name="imagenProducto" id="id_foto">
+            </div>
+            
+            
+    
+            <div class="wrapper"><button type="submit" class="link1"><em><b>ENVIAR</b></em></button></div>
+        </fieldset>
+        </form>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

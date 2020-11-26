@@ -27,3 +27,15 @@ class Contrata(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
     asesor = models.ForeignKey(Asesor, on_delete=models.PROTECT)
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
+
+class Categoria(models.Model):
+    nombreCategoria = models.CharField(max_length=50)
+    estado = models.BooleanField(default=True)
+
+class Producto(models.Model):
+    nombreProducto = models.CharField(max_length=100)
+    codigoProducto = models.CharField(max_length=20)
+    cantidadProducto = models.IntegerField()
+    precioProducto = models.DecimalField(max_digits=19, decimal_places=2, null=True)
+    imagenProducto = models.ImageField(blank=True, upload_to='producto/')
+    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT)
